@@ -1,0 +1,33 @@
+{
+  "name": "heartbeat",
+  "description": "Heartbeat for external monitoring of ArangoDB.",
+  "author": "Christian Pekeler",
+  "version": "1.0.0",
+  "license": "Apache License, Version 2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pekeler/foxx-heartbeat.git"
+  },
+  "contributors": [
+    {
+      "name": "Christian Pekeler",
+      "email": "christian@pekeler.org"
+    }
+  ],
+  "scripts": {
+    "setup": "setup.js",
+    "teardown": "teardown.js",
+    "beat": "beat.js"
+  },
+  "configuration": {
+    "interval": {
+      "description": "The time between heartbeats in seconds.",
+      "type": "integer",
+      "default": 60
+    },
+    "url": {
+      "description": "The URL that will get requested with every heartbeat.",
+      "type": "string"
+    }
+  }
+}
