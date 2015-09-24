@@ -18,7 +18,7 @@ Then we install the foxx app with:
 foxx-manager install https://github.com/pekeler/foxx-heartbeat/archive/master.zip /heartbeat url='http://k.wdt.io/xyz/arangodb-heartbeat' interval=300
 ```
 
-The heartbeat will automatically start in 5 minutes.
+The heartbeat will automatically start.
 
 ## Configuration
 
