@@ -7,7 +7,7 @@ queue.all().forEach(jobId => queue.delete(jobId));
 const intervalInSeconds = applicationContext.configuration.interval;
 queue.push(
   {mount: '/heartbeat', name: 'beat'},
-  {},
+  {interval: intervalInSeconds},
   {repeatTimes: -1, repeatDelay: intervalInSeconds * 1000}
 );
 

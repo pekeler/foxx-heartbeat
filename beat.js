@@ -2,8 +2,13 @@
 'use strict';
 const request = require('org/arangodb/request');
 
-const url = applicationContext.configuration.url;
+const configuredUrl      = applicationContext.configuration.url;
+const configuredInterval = applicationContext.configuration.interval;
+const currentInterval    = applicationContext.argv[0].interval;
 
-if (url) {
-  request.head(url, {});
+if (currentInterval !== configuredInterval) {
+  require('console').log('heartbeat reconfigured');
+  require('setup');
+} else if (configuredUrl) {
+  request.head(configuredUrl, {});
 }
