@@ -8,7 +8,7 @@ queue.all().forEach(function(jobId) {
 });
 const intervalInSeconds = applicationContext.configuration.interval;
 queue.push(
-  {mount: '/heartbeat', name: 'beat'},
+  {mount: applicationContext.mount, name: 'beat'},
   {interval: intervalInSeconds},
   {repeatTimes: -1, repeatDelay: intervalInSeconds * 1000}
 );
