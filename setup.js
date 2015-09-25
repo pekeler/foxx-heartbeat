@@ -3,7 +3,9 @@
 const Foxx = require('org/arangodb/foxx');
 
 const queue = Foxx.queues.create('heartbeat');
-queue.all().forEach(jobId => queue.delete(jobId));
+queue.all().forEach(function(jobId) {
+  queue.delete(jobId);
+});
 const intervalInSeconds = applicationContext.configuration.interval;
 queue.push(
   {mount: '/heartbeat', name: 'beat'},
