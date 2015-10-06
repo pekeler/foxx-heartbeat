@@ -5,7 +5,7 @@ The Heartbeat app can be used to monitor ArangoDB. It makes an HTTP head request
 *Installation*
 
 ```bash
-foxx-manager install https://github.com/pekeler/foxx-heartbeat/archive/master.zip /heartbeat url='<URL that should receive the heartbeat>' interval=<how many seconds between beats>
+foxx-manager install foxx-heartbeat /<mountpoint> url='<URL that should receive the heartbeat>' interval=<how many seconds between beats>
 ```
 
 *Example using WDT.io*
@@ -15,7 +15,7 @@ Let's say we want a heartbeat every 5 minutes. So we create a new inbound timer 
 Then we install the foxx app with:
 
 ```bash
-foxx-manager install https://github.com/pekeler/foxx-heartbeat/archive/master.zip /heartbeat url='http://k.wdt.io/xyz/arangodb-heartbeat' interval=300
+foxx-manager install foxx-heartbeat /heartbeat url='http://k.wdt.io/xyz/arangodb-heartbeat' interval=300
 ```
 
 The heartbeat will automatically start.
